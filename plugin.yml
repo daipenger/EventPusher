@@ -1,0 +1,3 @@
+name: EventPusher
+main: daibutz.minecraft.eventpusher.EventPusher
+version: 1
