@@ -51,7 +51,7 @@ public class Server {
 						}
 					}
 				}
-			});
+			}).start();
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
