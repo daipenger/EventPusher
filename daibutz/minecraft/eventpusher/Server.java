@@ -36,8 +36,10 @@ public class Server {
 							// IOException.
 							Socket newSocket = serverSocket.accept();
 							
-							if (clients.size() >= MAX_CLIENTS)
+							if (clients.size() >= MAX_CLIENTS) {
+								newSocket.close();
 								continue;
+							}
 							
 							// Reading from clients is not needed for now. It's sufficient to keep track
 							// of the writers.
