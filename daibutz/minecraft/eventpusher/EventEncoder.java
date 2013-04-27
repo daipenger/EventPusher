@@ -17,9 +17,9 @@ public class EventEncoder implements Listener {
 	
 	@EventHandler(priority = EventPriority.LOW)
 	public void onPlayerJoin(PlayerJoinEvent e) {
-		eventPusher.push("{\"event\":" + e.getEventName() + "," 
-				+ "\"player\"" + e.getPlayer().getName() + ","
-				+ "\"join-message\"" + e.getJoinMessage()
+		eventPusher.push("{\"event\":\"" + e.getEventName() + "\"," 
+				+ "\"player\":\"" + e.getPlayer().getName() + "\","
+				+ "\"join-message\":\"" + e.getJoinMessage() +"\""
 				+ "}");
 	}
 }
