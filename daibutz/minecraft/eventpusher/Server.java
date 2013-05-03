@@ -96,8 +96,6 @@ public class Server {
 			} catch (IOException e) {
 				// Assume the remote connection has closed.
 				clients.remove(client);
-				
-				e.printStackTrace();
 			}
 		}
 	}
