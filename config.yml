@@ -1,2 +1,4 @@
+max-clients: 1
+port: 7112
 debug:
   print-to-console: false

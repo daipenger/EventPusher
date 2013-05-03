@@ -10,7 +10,7 @@ public class EventPusher extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
-		server = new Server();
+		server = new Server(getConfig().getInt("port"), getConfig().getInt("max-clients"));
 		server.startListening();
 		
 		eventEncoder = new EventEncoder(this);

@@ -9,14 +9,16 @@ import java.util.Vector;
 
 public class Server {
 
-	private static final int PORT = 7112;
-	private static final int MAX_CLIENTS = 2;
+	private int port;
+	private int maxClients;
 	
 	private ServerSocket serverSocket;
 	private Vector<BufferedWriter> clients;
 	
-	public Server() {
-		clients = new Vector<BufferedWriter>(MAX_CLIENTS);
+	public Server(int port, int maxClients) {
+		this.port = port;
+		this.maxClients = maxClients;
+		clients = new Vector<BufferedWriter>(maxClients);
 	}
 	
 	/**
@@ -24,7 +26,7 @@ public class Server {
 	 */
 	public void startListening() {
 		try {
-			serverSocket = new ServerSocket(PORT);
+			serverSocket = new ServerSocket(port);
 			
 			new Thread(new Runnable() {
 				@Override
@@ -36,7 +38,7 @@ public class Server {
 							// IOException.
 							Socket newSocket = serverSocket.accept();
 							
-							if (clients.size() >= MAX_CLIENTS) {
+							if (clients.size() >= maxClients) {
 								newSocket.close();
 								continue;
 							}
