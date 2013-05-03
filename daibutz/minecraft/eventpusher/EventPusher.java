@@ -24,6 +24,8 @@ public class EventPusher extends JavaPlugin {
 	}
 	
 	public void push(String jsonMessage) {
+		if (getConfig().getBoolean("debug.print-to-console"))
+			getLogger().info(jsonMessage);
 		server.sendToAllClients(jsonMessage);
 	}
 }
