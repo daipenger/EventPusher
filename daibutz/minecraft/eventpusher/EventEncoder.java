@@ -39,8 +39,8 @@ public class EventEncoder implements Listener {
 		j.addProperty("x", b.getX());
 		j.addProperty("y", b.getY());
 		j.addProperty("z", b.getZ());
-		j.addProperty("type-id", b.getTypeId());
-		j.addProperty("data", b.getData());
+		
+		j.addProperty("type", b.getType().toString());
 		return j;
 	}
 
