@@ -46,7 +46,7 @@ public class EventEncoder implements Listener {
 
 	/* Event Handlers */
 	
-	@EventHandler(priority = EventPriority.LOWEST)
+	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
 	public void onPlayerJoin(PlayerJoinEvent e) {
 		JsonObject j = new JsonObject();
 		j.addProperty("event", e.getEventName());
@@ -56,7 +56,7 @@ public class EventEncoder implements Listener {
 		eventPusher.push(j.toString());
 	}
 	
-	@EventHandler(priority = EventPriority.LOWEST)
+	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
 	public void onPlayerQuit(PlayerQuitEvent e) {
 		JsonObject j = new JsonObject();
 		j.addProperty("event", e.getEventName());
@@ -66,7 +66,7 @@ public class EventEncoder implements Listener {
 		eventPusher.push(j.toString());
 	}
 	
-	@EventHandler(priority = EventPriority.LOWEST)
+	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
 	public void onPlayerChat(AsyncPlayerChatEvent e) {
 		JsonObject j = new JsonObject();
 		j.addProperty("event", e.getEventName());
@@ -81,7 +81,7 @@ public class EventEncoder implements Listener {
 		eventPusher.push(j.toString());
 	}
 	
-	@EventHandler(priority = EventPriority.LOWEST)
+	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
 	public void onBlockPlace(BlockPlaceEvent e) {
 		JsonObject j = new JsonObject();
 		j.addProperty("event", e.getEventName());
@@ -91,7 +91,7 @@ public class EventEncoder implements Listener {
 		eventPusher.push(j.toString());
 	}
 	
-	@EventHandler(priority = EventPriority.LOWEST)
+	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
 	public void onPlayerVelocity(PlayerVelocityEvent e) {
 		JsonObject j = new JsonObject();
 		j.addProperty("event", e.getEventName());
@@ -101,7 +101,7 @@ public class EventEncoder implements Listener {
 		eventPusher.push(j.toString());
 	}
 	
-	@EventHandler(priority = EventPriority.LOWEST)
+	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
 	public void onPlayerDeath(PlayerDeathEvent e) {
 		JsonObject j = new JsonObject();
 		j.addProperty("event", e.getEventName());
